@@ -1,4 +1,4 @@
-package com.example.demo.persistence.repository;
+package com.example.demo.persistence.CRUD;
 
 import com.example.demo.persistence.entity.PizzaEntity;
 import org.springframework.data.repository.ListCrudRepository;
