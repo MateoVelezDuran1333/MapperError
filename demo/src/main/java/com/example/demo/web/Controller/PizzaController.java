@@ -1,7 +1,7 @@
 package com.example.demo.web.Controller;
 
-import com.example.demo.persistence.entity.PizzaEntity;
-import com.example.demo.service.PizzaService;
+import com.example.demo.domain.PizzaDTO;
+import com.example.demo.domain.service.PizzaServiceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,16 +14,12 @@ import java.util.List;
 @RequestMapping("/api/pizzas")
 public class PizzaController {
 
-    private final PizzaService pizzaService;
-
     @Autowired
-    public PizzaController(PizzaService pizzaService) {
-        this.pizzaService = pizzaService;
-    }
+    private PizzaServiceDTO pizzaServiceDTO;
 
     @GetMapping("/available")
-    public ResponseEntity<List<PizzaEntity>> getAvailable(){
-        return ResponseEntity.ok(this.pizzaService.getAvailable());
+    public ResponseEntity<List<PizzaDTO>> getAvailable(){
+        return ResponseEntity.ok(this.pizzaServiceDTO.getAvailable());
     }
 
 }

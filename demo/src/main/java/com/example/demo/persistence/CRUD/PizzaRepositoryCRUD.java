@@ -5,7 +5,7 @@ import org.springframework.data.repository.ListCrudRepository;
 
 import java.util.List;
 
-public interface PizzaRepository extends ListCrudRepository<PizzaEntity, Integer> {
+public interface PizzaRepositoryCRUD extends ListCrudRepository<PizzaEntity, Integer> {
 
     public List<PizzaEntity>  findAllByAvailableTrueOrderByPrice();
 
